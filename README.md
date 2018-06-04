@@ -1,4 +1,4 @@
-# Hugo Learn Theme
+# Netspective Default Hugo Theme
 
 This repository contains a theme for [Hugo](https://gohugo.io/), based on great [Grav Learn Theme](http://learn.getgrav.org/) ported to Hugo by [matcornic](https://github.com/matcornic/hugo-theme-learn).
 
