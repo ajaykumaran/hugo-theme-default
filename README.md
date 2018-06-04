@@ -1,6 +1,6 @@
 # Hugo Learn Theme
 
-This repository contains a theme for [Hugo](https://gohugo.io/), based on great [Grav Learn Theme](http://learn.getgrav.org/) ported to Hugo via [matcornic](matcornic/hugo-theme-learn).
+This repository contains a theme for [Hugo](https://gohugo.io/), based on great [Grav Learn Theme](http://learn.getgrav.org/) ported to Hugo by [matcornic](https://github.com/matcornic/hugo-theme-learn).
 
 Visit the [theme documentation](https://learn.netlify.com/en/) to learn how to use it.
 
