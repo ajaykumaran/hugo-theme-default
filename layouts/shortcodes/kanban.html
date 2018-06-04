@@ -1,0 +1,16 @@
+{{ $container := .Get "container" | default "kanban" }}
+{{ $width := .Get "width" | default "250px" }}
+{{ $gutter := .Get "gutter" | default "5px" }}
+
+<div id="{{ $container }}"></div>
+<link rel="stylesheet" href="/jkanban/jkanban.css">
+<script src="/jkanban/jkanban.js"></script>
+<script>
+    new jKanban({
+        element: '#{{ $container }}',
+        gutter: {{ $gutter }},
+        widthBoard: {{ $width }},
+        boards: {{ safeJS .Inner }},
+        dragBoards: false,
+    });
+</script>
