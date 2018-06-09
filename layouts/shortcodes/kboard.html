@@ -1,0 +1,56 @@
+{{ $srcContainer := .Get "srcContainer" | default "boardmd" }}
+{{ $destContainer := .Get "destContainer" | default "jkboard" }}
+{{ $width := .Get "width" | default "250px" }}
+{{ $gutter := .Get "gutter" | default "5px" }}
+{{ $classRegEx := .Get "classRegEx" | default "^(.*?) {(.*)}$" }}
+
+<div id="{{ $srcContainer }}" style="display:none">
+    {{ .Inner | markdownify }}
+</div>
+<div id="{{ $destContainer }}"></div>
+<link rel="stylesheet" href="/jkanban/jkanban.css">
+<script src="/jkanban/jkanban.js"></script>
+<script>
+    function generateBoards(srcDivId) {
+        var classNameRegEx = new RegExp("{{ $classRegEx }}")
+
+        function parseClassNameFromTitle(destArray, sourceText) {
+            var parts = classNameRegEx.exec(sourceText)
+            if(parts != null && parts.length > 0) {
+                destArray["title"] = parts[1]
+                destArray["class"] = parts[2]
+            }
+        }
+
+        // board names are defined as <h1> blocks using # Board Title in markdown
+        // board titles can optionally contain {className}, which will be extracted
+        // e.g. # Board Title {classy} will use "classy" as the class name
+        var boards = [];
+        $(srcDivId + ' > h1').each(function () {
+            // board items are defined as <li> blocks using * Item Title in markdown
+            var items = []
+            $(srcDivId + " > ul:eq("+ boards.length +") li").each(function () {
+                items.push({
+                    title : $(this).text()
+                })
+            })
+            var board = {
+                id: $(this).attr('id'),
+                title : $(this).text(),
+                item : items
+            }
+            parseClassNameFromTitle(board, board.title)
+            boards.push(board);
+        });
+        return boards
+    };
+
+    new jKanban({
+        element: '#{{ $destContainer }}',
+        gutter: {{ $gutter }},
+        widthBoard: {{ $width }},
+        boards: generateBoards('#{{ $srcContainer }}'),
+        dragBoards: false,
+    });
+</script>
+
