@@ -1,0 +1,33 @@
+jKanban update from https://github.com/riktar/jkanban/raw/master/dist on Sun Jun 10 19:56:44 DST 2018
+--2018-06-10 19:56:44--  https://github.com/riktar/jkanban/raw/master/dist/jkanban.js
+Resolving github.com (github.com)... 192.30.253.112, 192.30.253.113
+Connecting to github.com (github.com)|192.30.253.112|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/riktar/jkanban/master/dist/jkanban.js [following]
+--2018-06-10 19:56:45--  https://raw.githubusercontent.com/riktar/jkanban/master/dist/jkanban.js
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.20.133
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.20.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 39748 (39K) [text/plain]
+Saving to: ‘./static/jkanban/jkanban.js’
+
+     0K .......... .......... .......... ........             100% 2.22M=0.02s
+
+2018-06-10 19:56:45 (2.22 MB/s) - ‘./static/jkanban/jkanban.js’ saved [39748/39748]
+
+--2018-06-10 19:56:45--  https://github.com/riktar/jkanban/raw/master/dist/jkanban.css
+Resolving github.com (github.com)... 192.30.253.112, 192.30.253.113
+Connecting to github.com (github.com)|192.30.253.112|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/riktar/jkanban/master/dist/jkanban.css [following]
+--2018-06-10 19:56:45--  https://raw.githubusercontent.com/riktar/jkanban/master/dist/jkanban.css
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.20.133
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.20.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1741 (1.7K) [text/plain]
+Saving to: ‘./static/jkanban/jkanban.css’
+
+     0K .                                                     100% 51.9M=0s
+
+2018-06-10 19:56:45 (51.9 MB/s) - ‘./static/jkanban/jkanban.css’ saved [1741/1741]
+
