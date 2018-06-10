@@ -10,5 +10,8 @@ Navigate to your themes folder in your Hugo site and use the following commands:
 
 ```
 $ cd themes
-$ git clone https://github.com/netspective/hugo-theme-default netspective 
+$ git submodule add https://github.com/netspective/hugo-theme-default netspective
 ```
+## Configuration
+
+Update config.toml to set Netspective theme
