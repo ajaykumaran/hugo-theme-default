@@ -1,0 +1,16 @@
+{{ $container := .Get "container" | default "bpmn" }}
+{{ $instance := .Get "instance" | default $container }}
+<script src="https://unpkg.com/bpmn-js@2.1.0/dist/bpmn-viewer.development.js"></script>
+<div id="{{ $container }}" class="bpmn" align="{{ .Get "align" | default "center" }}" style="height:{{ .Get "height" | default "1024px" }}"></div>
+<script>
+$.get("{{ safeJS (.Get "diagram") }}", function openDiagram(bpmnXML) {
+    var {{ safeJS $instance }}Viewer = new BpmnJS({ container: '#{{ $container }}' });
+    {{ safeJS $instance }}Viewer.importXML(bpmnXML, function(err) {
+        if (err) {
+            document.getElementById('{{ $container }}').innerHtml = err + " in " + {{ safeJS $instance }}Diagram
+        }
+        {{ safeJS $instance }}Viewer.get('canvas').zoom('fit-viewport');
+    });
+}, 'text');
+</script>
+<div align="{{ .Get "align" | default "center" }}"><a href="{{ safeJS (.Get "diagram") }}">View BPMN Source</a></div>
